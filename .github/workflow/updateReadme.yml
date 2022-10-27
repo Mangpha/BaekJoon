@@ -1,0 +1,50 @@
+name: Update Readme
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Install Nodejs
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+                  cache: "npm"
+
+            - name: cache node modules
+              id: node-cache
+              uses: actions/cache@v3
+              env:
+                  cache-name: cache-node-modules
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node_modules-
+
+            - name: install dependencies
+              if: steps.node-cache.outputs.cache-hit != 'true'
+              run: |
+                  npm i
+
+            - name: run updateReadme.js
+              run: |
+                  node updateReadme.js
+
+            - name: commit changes
+              run: |
+                  git config --global user.name 'Mangpha'
+                  git config --global user.email '8350130@gmail.com'
+                  git add -A
+                  git commit -am "[ Auto ] Update README.md"
+
+            - name: push changes
+              run: |
+                  git push
