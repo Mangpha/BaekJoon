@@ -13,8 +13,6 @@ let md = `## BackJoon
 
 ## Solved
 
-| 문제  | 문제 제목(링크) | 정답 비율 |
-|:-------------:|:-------------:|:------:|
 `;
 
 const log = {
@@ -27,12 +25,18 @@ const readDir = () => {
         log.info("[#] Read Folder");
         const getPage = (num) => Math.floor((num - 1000) / 100) + 1;
 
+        let count = 0;
         fs.readdirSync(folder).forEach((file) => {
             const filename = file.match(/^\d+/g).join("");
             const currentPage = getPage(filename);
             if (typeof probPage[currentPage] === "undefined") probPage[currentPage] = [];
             probPage[currentPage].push(filename);
+            count++;
         });
+        md += `| Total |
+|:-----:|
+| ${count} |
+`;
         log.info("[#] Finish Reading");
     } catch (error) {
         log.error("[!] Type Error!");
@@ -55,6 +59,10 @@ const fetchPage = async (page) => {
 };
 
 const getPageData = async () => {
+    md += `
+| 문제  | 문제 제목(링크) | 정답 비율 |
+|:-------------:|:-------------:|:------:|
+`;
     for (page in probPage) {
         const data = await fetchPage(page);
         probPage[page].forEach((prob) => {
