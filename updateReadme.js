@@ -73,7 +73,7 @@ const getPageData = async () => {
             const percentage = tr.find("td:nth-child(6)").text();
             md += `| ${probId} | [${title}](${
                 url + probLink
-            }) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/${probId}.js) | ${percentage} |
+            }) | [풀이](https://github.com/Mangpha/BaekJoon/blob/master/solved/${probId}.js) | ${percentage} |
        
             `;
         });
