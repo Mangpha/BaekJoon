@@ -60,8 +60,8 @@ const fetchPage = async (page) => {
 
 const getPageData = async () => {
     md += `
-| 문제  | 문제 제목(링크) | 정답 비율 |
-|:-------------:|:-------------:|:------:|
+| 문제  | 문제 제목(링크) | 풀이 | 정답 비율 |
+|:-------------:|:-------------:|:------:|:------:|
 `;
     for (page in probPage) {
         const data = await fetchPage(page);
@@ -71,7 +71,9 @@ const getPageData = async () => {
             const title = tr.find("td:nth-child(2)").text();
             const probLink = tr.find("td:nth-child(2)").find("a").attr("href");
             const percentage = tr.find("td:nth-child(6)").text();
-            md += `| ${probId} | [${title}](${url + probLink}) | ${percentage} |
+            md += `| ${probId} | [${title}](${
+                url + probLink
+            }) | [풀이](https://github.com/Mangpha/BaekJoon/blob/master/solved/${probId}.js) | ${percentage} |
        
             `;
         });
