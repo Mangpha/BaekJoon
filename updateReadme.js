@@ -74,8 +74,7 @@ const getPageData = async () => {
             md += `| ${probId} | [${title}](${
                 url + probLink
             }) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/${probId}.js) | ${percentage} |
-       
-            `;
+`;
         });
     }
 };
