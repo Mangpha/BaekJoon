@@ -17,5 +17,5 @@
 | 1110 | [더하기 사이클](https://www.acmicpc.net/problemset/problem/1110) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/1110.js) | 46.473% |
 | 1157 | [단어 공부](https://www.acmicpc.net/problemset/problem/1157) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/1157.js) | 39.368% |
 | 1193 | [분수찾기](https://www.acmicpc.net/problemset/problem/1193) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/1193.js) | 51.098% |
-| 1237 | [정ㅋ벅ㅋ](https://www.acmicpc.net/problemset/problem/1237) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/1237.js) | 32.054% |
-| 1260 | [DFS와 BFS](https://www.acmicpc.net/problemset/problem/1260) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/1260.js) | 35.879% |
+| 1236 | [성 지키기](https://www.acmicpc.net/problemset/problem/1236) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/1236.js) | 40.055% |
+| 1259 | [팰린드롬수](https://www.acmicpc.net/problemset/problem/1259) | [링크](https://github.com/Mangpha/BaekJoon/blob/master/solved/1259.js) | 58.100% |
