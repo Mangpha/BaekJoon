@@ -66,7 +66,13 @@ const getPageData = async () => {
     for (page in probPage) {
         const data = await fetchPage(page);
         probPage[page].forEach((prob) => {
-            const tr = data.children(`tr:nth-child(${prob - (100 * (page - 1) + 1000) + 1})`);
+            const tr = data.children(
+                `tr:nth-child(${
+                    page === 3 && prob > 1216
+                        ? prob - (100 * (page - 1) + 1000)
+                        : prob - (100 * (page - 1) + 1000) + 1
+                })`,
+            );
             const probId = tr.find("td:nth-child(1)").text();
             const title = tr.find("td:nth-child(2)").text();
             const probLink = tr.find("td:nth-child(2)").find("a").attr("href");
