@@ -68,7 +68,7 @@ const getPageData = async () => {
         probPage[page].forEach((prob) => {
             const tr = data.children(
                 `tr:nth-child(${
-                    page === 3 && prob > 1216
+                    page === "3" && prob > 1216
                         ? prob - (100 * (page - 1) + 1000)
                         : prob - (100 * (page - 1) + 1000) + 1
                 })`,
